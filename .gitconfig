@@ -1,0 +1,15 @@
+[user]
+	name = Jaime Loeuf
+	email = jaimeloeuf@gmail.com
+[core]
+  # I am using Visual Studio code as my default git editor
+	editor = code --wait
+[color]
+	ui = true
+[alias]
+	s = status
+	last = log -1 HEAD
+	all = add .
+	s = status
+	comit = commit
+	ci = commit
