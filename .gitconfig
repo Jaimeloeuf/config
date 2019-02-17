@@ -2,14 +2,18 @@
 	name = Jaime Loeuf
 	email = jaimeloeuf@gmail.com
 [core]
-  # I am using Visual Studio code as my default git editor
+	# I am using Visual Studio code as my default git editor
 	editor = code --wait
 [color]
 	ui = true
 [alias]
 	s = status
+	# Display the last commit log from HEAD
 	last = log -1 HEAD
+	# Allow you to add all local changes to the staging area
 	all = add .
 	s = status
 	comit = commit
 	ci = commit
+	# Allows you to unstage a file using 'git unstage file_name'
+	unstage = reset HEAD --
