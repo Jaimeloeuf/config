@@ -12,10 +12,12 @@
 	last = log -1 HEAD
 	# Allow you to add all local changes to the staging area
 	all = add .
-    # Abbrev. for commits
+   	# Abbrev. for commits
 	comit = commit
 	ci = commit
 	# Allows you to unstage a file using 'git unstage file_name'
 	unstage = reset HEAD --
-    # Abbrev. for branch
-    b = branch
+    	# Abbrev. for branch
+    	b = branch
+    	# Abbrev. for deleting a branch
+    	branch -d
