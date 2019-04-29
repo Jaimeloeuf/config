@@ -20,4 +20,4 @@
     	# Abbrev. for branch
     	b = branch
     	# Abbrev. for deleting a branch
-    	branch -d
+    	delete = branch -d
