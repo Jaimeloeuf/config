@@ -21,3 +21,5 @@
     	b = branch
     	# Abbrev. for deleting a branch
     	delete = branch -d
+	# Abbrev. for checking out a version
+    	co = checkout
