@@ -4,6 +4,9 @@
 [core]
 	# I am using Visual Studio code as my default git editor
 	editor = code --wait
+    # Use a global gitignore file in the root user directory
+    # Only use this option if you have a global gitignore file
+    excludesfile = ~/.gitignore_global
 [color]
 	ui = true
 [alias]
@@ -23,3 +26,5 @@
 	delete = branch -d
 	# Abbrev. for checking out a version
 	co = checkout
+    # Abbrev. for calling git diff
+	d = diff
