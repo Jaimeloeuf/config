@@ -13,6 +13,8 @@
 	s = status
 	# Display the last commit log from HEAD
 	last = log -1 HEAD
+    # Abbrev. for git add
+    a = add
 	# Allow you to add all local changes to the staging area
 	all = add .
    	# Abbrev. for commits
@@ -28,3 +30,5 @@
 	co = checkout
     # Abbrev. for calling git diff
 	d = diff
+    # Abbrev. for git diff --staged
+	ds = diff --staged
