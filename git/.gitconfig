@@ -9,29 +9,26 @@
 [color]
 	ui = true
 [alias]
+    # Simple shorthand abbrevations.
 	s = status
-	# Display the last commit log from HEAD
-	last = log -1 HEAD
-    # Abbrev. for git add
     a = add
+	ci = commit
+    b = branch
+	d = diff
+    co = checkout
+
 	# Allow you to add all local changes to the staging area
 	all = add .
-   	# Abbrev. for commits
-	comit = commit
-	ci = commit
+	# Display the last commit log from HEAD
+	last = log -1 HEAD
 	# Allows you to unstage a file using 'git unstage file_name'
 	unstage = reset HEAD --
-	# Abbrev. for branch
-	b = branch
 	# Abbrev. for deleting a branch
 	delete = branch -d
-	# Abbrev. for checking out a version
-	co = checkout
-    # Abbrev. for calling git diff
-	d = diff
     # Abbrev. for git diff --staged
 	ds = diff --staged
     # Delete last commit but keep changes
     uncommit = reset HEAD^1
 [push]
+    # Always push tags together when pushing commits to remote repo.
 	followTags = true
