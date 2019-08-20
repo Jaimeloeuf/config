@@ -5,7 +5,6 @@
 	# I am using Visual Studio code as my default git editor
 	editor = code --wait
     # Use a global gitignore file in the root user directory
-    # Only use this option if you have a global gitignore file
     excludesfile = ~/.gitignore_global
 [color]
 	ui = true
@@ -32,3 +31,7 @@
 	d = diff
     # Abbrev. for git diff --staged
 	ds = diff --staged
+    # Delete last commit but keep changes
+    uncommit = reset HEAD^1
+[push]
+	followTags = true
