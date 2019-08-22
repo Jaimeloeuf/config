@@ -17,6 +17,15 @@
 	d = diff
     co = checkout
 
+    # Alias for diff related operations below
+    # Diff of staged files
+	ds = diff --staged
+    # Difference between current branch and master
+    dm = diff master
+    # Diff to see files that have changed between 2 branches
+    # Use with 2 branches, e.g. "git df development...master", shows files that are different from development & master
+    df = diff --name-status
+
 	# Allow you to add all local changes to the staging area
 	all = add .
 	# Display the last commit log from HEAD
@@ -25,13 +34,6 @@
 	unstage = reset HEAD --
 	# Abbrev. for deleting a branch
 	delete = branch -d
-    # Abbrev. for git diff --staged
-	ds = diff --staged
-    # Abbrev. to see the difference between current branch and master
-    dm = diff master
-    # Command that allows you to see files that have changed between 2 branches
-    # Use with 2 branches, e.g. git df development...master, shows files that are different from development & master
-    df = diff --name-status
     # Delete last commit but keep changes
     uncommit = reset HEAD^1
 [push]
