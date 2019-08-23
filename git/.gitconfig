@@ -9,6 +9,9 @@
 [color]
 	ui = true
 [alias]
+    # Alias to show all the aliases
+    alias = config --get-regexp alias
+
     # Simple shorthand abbrevations.
 	s = status
     a = add
