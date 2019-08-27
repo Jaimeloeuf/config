@@ -47,6 +47,10 @@
 	delete = branch -d
     # Delete last commit but keep changes
     uncommit = reset HEAD^1
+    # Delete changes of an unstaged file.
+    # E.g. "git delete_changes file_name"  to delete changes of a file to last commit
+    # E.g. "git delete_changes ." to delete changes of all files to last commit
+    delchanges = checkout --
 [push]
     # Always push tags together when pushing commits to remote repo.
 	followTags = true
