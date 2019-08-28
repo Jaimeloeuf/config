@@ -18,7 +18,7 @@ rc files can mean the following in unix/unix-like systems:
 - git
     - .gitconfig
     - .gitignore_global
-    - notes.md
+    - README.md
 - powershell
     - Profile.ps1
 
