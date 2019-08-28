@@ -4,40 +4,40 @@
 [core]
 	# I am using Visual Studio code as my default git editor
 	editor = code --wait
-    # Use a global gitignore file in the root user directory
-    excludesfile = ~/.gitignore_global
+	# Use a global gitignore file in the root user directory
+	excludesfile = ~/.gitignore_global
 [color]
 	ui = true
 [alias]
-    # Alias to show all the aliases
-    alias = config --get-regexp alias
+	# Alias to show all the aliases
+	alias = config --get-regexp alias
 
-    # Simple shorthand abbrevations.
+	# Simple shorthand abbrevations.
 	s = status
-    a = add
+	a = add
 	ci = commit
-    b = branch
+	b = branch
 	d = diff
-    co = checkout
+	co = checkout
 
 
-    # Aliases for diff related operations below
-    # Diff of staged files
+	# Aliases for diff related operations below
+	# Diff of staged files
 	ds = diff --staged
-    # Difference between current branch and master
-    dm = diff master
-    # Diff to see files that have changed between 2 branches
-    # Use with 2 branches, e.g. "git df development...master", shows files that are different from development & master
-    df = diff --name-status
+	# Difference between current branch and master
+	dm = diff master
+	# Diff to see files that have changed between 2 branches
+	# Use with 2 branches, e.g. "git df development...master", shows files that are different from development & master
+	df = diff --name-status
 
 
-    # Aliases for git log operations
+	# Aliases for git log operations
 	# Display the last commit log from HEAD
 	last = log -1 HEAD
-    # Only show commits both the input branches don't share.
-    # E.g. "git log --oneline --decorate --left-right --graph master...development" to show graph of master/development
-    graph = log --oneline --decorate --left-right --graph
-     
+	# Only show commits both the input branches don't share.
+	# E.g. "git log --oneline --decorate --left-right --graph master...development" to show graph of master/development
+	graph = log --oneline --decorate --left-right --graph
+	 
 
 	# Allow you to add all local changes to the staging area
 	all = add .
@@ -45,12 +45,12 @@
 	unstage = reset HEAD --
 	# Abbrev. for deleting a branch
 	delete = branch -d
-    # Delete last commit but keep changes
-    uncommit = reset HEAD^1
-    # Delete changes of an unstaged file.
-    # E.g. "git delete_changes file_name"  to delete changes of a file to last commit
-    # E.g. "git delete_changes ." to delete changes of all files to last commit
-    delchanges = checkout --
+	# Delete last commit but keep changes
+	uncommit = reset HEAD^1
+	# Delete changes of an unstaged file.
+	# E.g. "git delete_changes file_name"  to delete changes of a file to last commit
+	# E.g. "git delete_changes ." to delete changes of all files to last commit
+	delchanges = checkout --
 [push]
-    # Always push tags together when pushing commits to remote repo.
+	# Always push tags together when pushing commits to remote repo.
 	followTags = true
