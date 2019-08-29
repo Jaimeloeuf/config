@@ -1,7 +1,7 @@
 <# Profile with abbrevations for Git commands #>
 
 # Remove aliases before creating functions with these names to prevent clashing
-Remove-Item Alias:"gs" -Force
+# Can only be removed with the force flag applied
 Remove-Item Alias:"gl" -Force
 Remove-Item Alias:"gp" -Force
 
