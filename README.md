@@ -1,6 +1,5 @@
-# Config / rc files
-A collection of my personal program config files, and rc files used on my systems.  
-Feel free to use these files however you like :)  
+# Config
+A collection of my personal program config files, and rc files used on my systems. Feel free to use these files however you like :)  
 
 rc files can mean the following in unix/unix-like systems:
 1.	Runtime Configuration
@@ -24,4 +23,4 @@ rc files can mean the following in unix/unix-like systems:
 
 
 ## License and Contributing
-All items in this Repo are released under the MIT License. Please reach out [here](mailto:junjie@tor.us) if you would like to contribute!
+All items in this Repo are released under the MIT License. Please reach out [here](mailto:jaimeloeuf@gmail.com) if you would like to contribute!
