@@ -17,3 +17,7 @@ function gp { git push $args }
 # Function to go up 1 directory and alias to call the function.
 function back-dir { cd .. }
 Set-Alias -Name .. -Value back-dir
+
+<# Scripts for Remix-IDE #>
+# Abbrev. to start Remix-IDE
+function remix { start remix-ide }
