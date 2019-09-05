@@ -22,5 +22,7 @@ Set-Alias -Name .. -Value back-dir
 # Abbrev. to start Remix-IDE
 function remix { start remix-ide }
 
-# Abbrevation to start powershell in new window
-function pshell { Invoke-Item $PSHOME\powershell.exe }
+# Abbrevation to start "powershell" in new window
+function psh { Invoke-Item $PSHOME\powershell.exe }
+# Abbrevation to start "cmd" in new window
+function csh { start cmd }
