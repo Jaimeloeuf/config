@@ -9,33 +9,40 @@
 
 	# Use a global gitignore file in the root user directory
 	excludesfile = ~/.gitignore_global
-	
+
 	# Converts to CRLF when checking out files
 	# Converts to LF when storing the commits
 	autocrlf = true
-	
+
 	# When Git needs to change line endings to write a file in your working directory,
 	# It will change them to the default line ending on your platform.
-	# For Windows this will be CRLF, for Unix/Linux/OS X this will be LF.
+	# For Windows this will be CRLF, for Unix/Linux/macOS this will be LF.
 	eol = native
 [color]
 	# Colorize output of Git
 	ui = true
 [alias]
-	# Alias to show all the aliases
+	## Alias to show all the aliases
 	alias = config --get-regexp alias
 
-	# Simple shorthand abbrevations.
+	## Simple shorthand abbrevations.
 	s = status
 	a = add
-	ci = commit
-	b = branch
 	d = diff
 	l = log
 	co = checkout
+	f = fetch -p
 
 
-	# Aliases for diff related operations below
+	## Aliases for commit operations below
+	c = commit
+	# Commit without running any git hooks
+	cin = commit -n
+	# Pull from origin first before commiting to prevent out of date merge conflicts later when pushing
+	ci = "!f() { date; git pull origin $(git rev-parse --abbrev-ref HEAD); git commit; git log; }; f"
+
+
+	## Aliases for diff related operations below
 	# Diff of staged files
 	ds = diff --staged
 	# Difference between current branch and master
@@ -45,35 +52,84 @@
 	df = diff --name-status
 
 
-	# Aliases for git log operations
+	## Aliases for push operations  
+	p = push
+	# Push all branches
+	pa = push --all
+	# Force update tags on remote
+	ptf = push --tags -f
+
+
+	## Aliases for merge operations
+	m = merge
+	# Merge branch and will abort if it cannot be fast forwarded
+	mf = merge --ff-only
+	# Merge local, test into test2
+	# ml = fetch . test:test2
+
+
+	## Aliases for git log operations
 	# Display the last commit log from HEAD
 	last = log -1 HEAD
 	# Git log and show the names of, files that have been changed.
-	lf = log --name-only 
+	lf = log --name-only
+	# Search for string in Git log, e.g. git ls"Search string"
+	# ls = log -S
+	# ls = g log --grep=
+	# g log --grep="Initial Commit" # this is case sensitive
 	# git log, list single file
 	lsf = log --follow --
 	# Only show commits both the input branches don't share.
 	# E.g. "git log --oneline --decorate --left-right --graph master...development" to show graph of master/development
 	graph = log --oneline --decorate --left-right --graph
-	 
 
+
+	## Aliases for Staging/Commit and related operations
 	# Allow you to add all local changes to the staging area
 	all = add .
 	# Allows you to unstage a file using 'git unstage file_name'
 	unstage = reset HEAD --
-	# Abbrev. for deleting a branch
-	delete = branch -d
 	# Delete last commit but keep changes
 	uncommit = reset HEAD^1
 	# Below uncommit can take in arbitary num of commits to uncommit
-	# uncommit = reset HEAD^
+	uncommitn = reset HEAD^
 	# Delete changes of an unstaged file.
 	# E.g. "git delete_changes file_name"  to delete changes of a file to last commit
 	# E.g. "git delete_changes ." to delete changes of all files to last commit
 	delchanges = checkout --
     # Stash all files including untracked files
     stash-all = stash --include-untracked
+
+
+	## Aliases for branch operations
+	# Show local branches
+	b = branch
+	# Show all branches, including remote branches
+	ba = branch -a
+	# Abbrev. for deleting a branch
+	delete = branch -d
+
+
+	# Clear/Prune local branches that are already deleted remotely, e.g. delete on github, and now want local to reflect that change too
+	prune-remote-dry = remote prune origin --dry-run
+	prune-remote = remote prune origin
+
+
+	## How to ignore previously commited files
+	# You can omit the --cached option if you want to delete the file from both the repository and your local file system.
+	# $ echo debug.log >> .gitignore
+	# $ git rm --cached debug.log
+	# rm 'debug.log'
+	# $ git commit -m "Start ignoring debug.log"
 [push]
 	# Always push tags together when pushing commits to remote repo.
 	followTags = true
 	default = current
+[pull]
+	# Always pull from the current branch instead of the main/master branch
+	default = current
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
