@@ -7,11 +7,21 @@
 
 # Remove aliases before creating functions with these names to prevent clashing
 # Can only be removed with the force flag applied
-Remove-Item Alias:"gl" -Force
-Remove-Item Alias:"gp" -Force
+if (Test-Path Alias:gl) {
+    Remove-Item Alias:gl -Force
+}
+if (Test-Path Alias:gp) {
+    Remove-Item Alias:gp -Force
+}
 
-# Semantically similiar to the which command on linux shells
-New-Alias which get-command
+
+# Only add alias if it does not already exist
+# Mainly used to prevent errors when re-running Profile script using the rs function
+if (-Not (Test-Path Alias:which)) {
+    # Semantically similiar to the which command on linux shells
+    New-Alias which get-command
+}
+
 
 <# Create functions to wrap over commands #>
 # git abbrevations that takes in all the other arguements
