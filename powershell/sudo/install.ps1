@@ -1,8 +1,8 @@
-<# Installation script for remix module #>
+<# Installation script for sudo module #>
 
 function create_directory {
     # Set target directory
-    $target = "$Env:ProgramFiles\WindowsPowerShell\Modules\remix"
+    $target = "$Env:ProgramFiles\WindowsPowerShell\Modules\sudo"
 
     # Remove directory if it already exists
     if (Test-Path -Path $target) {
@@ -13,11 +13,11 @@ function create_directory {
     New-Item -ItemType directory -Path $target
 }
 
-function install_remix {
+function install_sudo {
     create_directory
 
     # Copy the module file into the directory
-    cp .\remix.psm1 $Env:ProgramFiles\WindowsPowerShell\Modules\remix
+    cp .\sudo.psm1 $Env:ProgramFiles\WindowsPowerShell\Modules\sudo
 }
 
-install_remix
+install_sudo
