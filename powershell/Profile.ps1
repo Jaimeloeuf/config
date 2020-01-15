@@ -68,3 +68,8 @@ function dsp { docker system prune -f }
 function psh { Invoke-Item $PSHOME\powershell.exe }
 # Abbrevation to start "cmd" in new window
 function csh { start cmd }
+
+
+# Runs module installer script in a elevated powershell process, and pause when completed
+# Accepts a single arguement for installer script's file path.
+function installer { Start-Process -Verb RunAs powershell.exe -Args "-executionpolicy bypass -command Set-Location \`"$PWD\`"; $args; pause" }
