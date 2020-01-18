@@ -17,7 +17,8 @@ function install_remix {
     create_directory
 
     # Copy the module file into the directory
-    cp .\remix.psm1 $Env:ProgramFiles\WindowsPowerShell\Modules\remix
+    # Get the module file as a relative path to the location of this script (needed for use with Profile's installer function)
+    cp $PSScriptRoot\remix.psm1 $Env:ProgramFiles\WindowsPowerShell\Modules\remix
 }
 
 install_remix

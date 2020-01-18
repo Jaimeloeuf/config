@@ -17,7 +17,8 @@ function install_sudo {
     create_directory
 
     # Copy the module file into the directory
-    cp .\sudo.psm1 $Env:ProgramFiles\WindowsPowerShell\Modules\sudo
+    # Get the module file as a relative path to the location of this script (needed for use with Profile's installer function)
+    cp $PSScriptRoot\sudo.psm1 $Env:ProgramFiles\WindowsPowerShell\Modules\sudo
 }
 
 install_sudo
