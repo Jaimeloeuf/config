@@ -38,8 +38,13 @@ function gds { git diff --staged $args }
 function gpb { git push origin $args":"$args } # Git push branch, pushes a specific branch to origin without needing to be on that branch
 
 # Abbrevation functions for npm commands
+function nodei { node --inspect-brk $args }
 function nr { npm run $args }
 function nrs { npm run serve }
+function nx {
+    $arguement = $args[0]
+    nodemon -x $arguement
+}
 
 <# Misc functions and aliases #>
 # Function to go up 1 directory and alias to call the function.
@@ -63,12 +68,10 @@ function ds { docker ps }
 function di { docker image $args }
 function dsp { docker system prune -f }
 
-
 # Abbrevation to start "powershell" in new window
 function psh { Invoke-Item $PSHOME\powershell.exe }
 # Abbrevation to start "cmd" in new window
 function csh { start cmd }
-
 
 # Runs module installer script in a elevated powershell process, and pause when completed
 # Accepts a single arguement for installer script's file path.
