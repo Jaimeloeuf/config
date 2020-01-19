@@ -76,3 +76,19 @@ function csh { start cmd }
 # Runs module installer script in a elevated powershell process, and pause when completed
 # Accepts a single arguement for installer script's file path.
 function installer { Start-Process -Verb RunAs powershell.exe -Args "-executionpolicy bypass -command Set-Location \`"$PWD\`"; $args; pause" }
+
+# Function to reload all the profiles so that any changes made in Profile.ps1 scripts,
+# can be loaded into the current session without creating a new powershell process
+function rs {
+    @(
+        $Profile.AllUsersAllHosts,
+        $Profile.AllUsersCurrentHost,
+        $Profile.CurrentUserAllHosts,
+        $Profile.CurrentUserCurrentHost
+    ) | % {
+        if(Test-Path $_){
+            Write-Verbose("Running $_")
+            . $_
+        }
+    }    
+}
