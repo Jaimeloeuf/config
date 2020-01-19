@@ -92,3 +92,13 @@ function rs {
         }
     }    
 }
+
+# Function to open explorer in given path
+function explore {
+    if ($args) {
+        explorer $args
+    } else {
+        # Open explorer in current directory if no path given
+        explorer .
+    }
+}
