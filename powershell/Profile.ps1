@@ -10,6 +10,9 @@
 if (Test-Path Alias:gl) {
     Remove-Item Alias:gl -Force
 }
+if (Test-Path Alias:gc) {
+    Remove-Item Alias:gc -Force
+}
 if (Test-Path Alias:gp) {
     Remove-Item Alias:gp -Force
 }
