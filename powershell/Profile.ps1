@@ -54,6 +54,8 @@ function nx {
 function back-dir { cd .. }
 Set-Alias -Name .. -Value back-dir
 
+function et { exit }
+
 # Functions to show network info of the given network name, and the password of that network
 function network { netsh wlan show profile name=$args key=clear }
 function networkPassword {
